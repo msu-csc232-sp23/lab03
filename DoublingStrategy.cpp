@@ -9,11 +9,11 @@
 #include <iostream>
 #include "DoublingStrategy.h"
 
-template<typename Object>
-size_t DoublingStrategy<Object>::resize(Object *&array, const size_t currentSize) {
-    Object *holder = array;
+template <typename Object>
+size_t DoublingStrategy<Object>::resize(Object*& array, const size_t currentSize) {
+    Object* holder = array;
     size_t size{2 * currentSize};
-    Object *tmp = new Object[size];
+    Object* tmp = new Object[size];
     for (size_t index{0}; index < currentSize; ++index) {
         tmp[index] = array[index];
     }

@@ -69,3 +69,8 @@ template<typename Object>
 std::vector<Object> ResizableArrayBag<Object>::toVector() const {
     return std::vector<Object>();
 }
+
+template<typename Object>
+size_t ResizableArrayBag<Object>::getMaxItems() const {
+    return maxItems_;
+}

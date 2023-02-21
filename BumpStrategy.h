@@ -11,13 +11,11 @@
 
 #include "ResizingStrategy.h"
 
-template<typename Object>
+template <typename Object>
 class BumpStrategy : public ResizingStrategy<Object> {
 public:
     BumpStrategy() = default;
-
-    size_t resize(Object *&array, const size_t currentSize) override;
-
+    size_t resize(Object*& array, const size_t currentSize) override;
     virtual ~BumpStrategy() = default;
 };
 

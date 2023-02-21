@@ -20,7 +20,7 @@ public:
      * Initializing constructor that initializes the size of the bag.
      * @param initialSize the initial capacity of this Bag
      */
-    ResizableArrayBag(size_t initialSize = INITIAL_SIZE,
+    explicit ResizableArrayBag(size_t initialSize = INITIAL_SIZE,
                       ResizingStrategy<Object> *resizingStrategy = new DoublingStrategy<Object>{});
 
     /**
@@ -28,14 +28,14 @@ public:
      *
      * @return The integer number of entries currently in the bag.
      */
-    virtual int getCurrentSize() const override;
+    int getCurrentSize() const override;
 
     /**
      * Determines whether this bag is empty.
      *
      * @return True if the bag is empty, false otherwise.
      */
-    virtual bool isEmpty() const override;
+    bool isEmpty() const override;
 
     /**
      * Adds a new entry to this bag.
@@ -47,7 +47,7 @@ public:
      *
      * @return True if addition was successful, false otherwise.
      */
-    virtual bool add(const Object &newEntry) override;
+    bool add(const Object &newEntry) override;
 
     /**
      * Removes one occurrence of a given entry from this bag, if possible.
@@ -59,14 +59,14 @@ public:
      *
      * @return True if removal was successful, false otherwise.
      */
-    virtual bool remove(const Object &anEntry) override;
+    bool remove(const Object &anEntry) override;
 
     /**
      * Removes all entries from this bag.
      *
      * @post Bag contains no items, and the count of items is 0.
      */
-    virtual void clear() override;
+    void clear() override;
 
     /**
      * Counts the number of times a given entry appears in this bag.
@@ -75,7 +75,7 @@ public:
      *
      * @return The number of times anEntry appears in the bag.
      */
-    virtual int getFrequencyOf(const Object &anEntry) const override;
+    int getFrequencyOf(const Object &anEntry) const override;
 
     /**
      * Determines whether this bag contains a given entry.
@@ -84,7 +84,7 @@ public:
      *
      * @return True if this bag contains anEntry, false otherwise.
      */
-    virtual bool contains(const Object &anEntry) const override;
+    bool contains(const Object &anEntry) const override;
 
     /**
      * Empties and then fills a given vector with all entries that are in
@@ -92,12 +92,14 @@ public:
      *
      * @return A vector containing copies of all entries in this bag.
      */
-    virtual std::vector<Object> toVector() const override;
+    std::vector<Object> toVector() const override;
 
     /**
      * Destroys this bag and frees its assigned memory.
      */
-    virtual ~ResizableArrayBag();
+    ~ResizableArrayBag();
+
+    size_t getMaxItems() const;
 
 private:
     static const int INITIAL_SIZE{10};

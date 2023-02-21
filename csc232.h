@@ -20,10 +20,6 @@
 #define SKIP_TESTING_TASK_2 TRUE
 // Set this macro to the value of FALSE to test Task 3
 #define SKIP_TESTING_TASK_3 TRUE
-// Set this macro to the value of FALSE to test Task 4
-#define SKIP_TESTING_TASK_4 TRUE
-// Set this macro to the value of FALSE to test Task 5
-#define SKIP_TESTING_TASK_5 TRUE
 
 #include <algorithm>
 #include <cassert>

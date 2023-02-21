@@ -19,12 +19,9 @@ This assignment is due Saturday, February 25, 2023 by 11:59:59 PM.
 
 Upon successful completion of this assignment, the student has
 
-- implemented a solution to a problem using
-    - iteration
-    - recursion
-- analyzed their solutions in terms of computational effort in terms of
-    - operations performed
-    - recursive invocations made
+- learned about refactoring
+- worked with some Gang of Four Patterns
+- Subclassed the ArrayBag into a resizable array bag.
 
 ## Background
 
@@ -100,28 +97,19 @@ Each task in this assignment corresponds to one of the parts of Exercise 19.
 2. Task 2: Declare an abstract method in template method
 3. Task 3: Implement abstract method referenced in template method
 
-### Task 1: Pull common code up in the class hierarchy
+### Task 1: Declare an abstract method in template method
 
-1. Locate `TODO`
-2. Locate `TODO`
-3. When you have completed this task, toggle the `SKIP_TESTING_TASK_1` macro from `TRUE` to `FALSE`.
-4. Build and execute the `test_task1` target to test your solution. Alternatively, you can build and execute
-   the `All CTest` target.
-5. When all the tests for this task pass, commit and push your changes to GitHub.
+1. Locate `TODO 1.1` in `ResizingStrategy.h` and follow its instructions
 
-### Task 2: Declare an abstract method in template method
+### Task 2: Pull common code up in the class hierarchy
  
-1. Locate `TODO`
-2. Locate `TODO`
-3. When you have completed this task, toggle the `SKIP_TESTING_TASK_2` macro from `TRUE` to `FALSE`.
-4. Build and execute the `test_task2` target to test your solution. Alternatively, you can build and execute
-   the `All CTest` target.
-5. When all the tests for this task pass, commit and push your changes to GitHub.
+1. Locate `TODO 2.1` in the `ResizingStrategy.h` header file and follow its instructions.
+2. Locate `TODO 2.2` and replace the assignment to the `size` local variable with a call to the template method declared in task 1.
 
 ### Task 3: Implement abstract method referenced in template method
 
-1. Locate `TODO`
-2. Locate `TODO`
+1. Erase the implementations of the resize methods in the concrete strategy classes (i.e., remove the declaration from the header file and the implementation from the source file)
+2. Override the new template method declared the first task, i.e., implement it accordingly in the concrete classes
 3. When you have completed this task, toggle the `SKIP_TESTING_TASK_3` macro from `TRUE` to `FALSE`.
 4. Build and execute the `test_task3` target to test your solution. Alternatively, you can build and execute
    the `All CTest` target.

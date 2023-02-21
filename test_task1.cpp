@@ -20,7 +20,7 @@ TEST_SUITE("Task 1" * doctest::description("A suite of tests for Task 1") * doct
     SCENARIO("Lab 3, Task 1")
     {
         GIVEN("Some preconditions") {
-
+            // look for size_t getStrategySize in ResizingStrategy.h
             WHEN("some stimulus occurs") {
 
                 THEN("validate some expected or required behavior") {

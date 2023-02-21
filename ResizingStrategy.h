@@ -11,11 +11,10 @@
 
 #include <cstdlib>
 
-template<typename Object>
+template <typename Object>
 class ResizingStrategy {
 public:
-    virtual size_t resize(Object *&array, const size_t currentSize) = 0;
-
+    virtual size_t resize(Object*& array, const size_t currentSize) = 0;
     virtual ~ResizingStrategy() = default;
 };
 

@@ -9,11 +9,11 @@
 #include <iostream>
 #include "BumpStrategy.h"
 
-template<typename Object>
-size_t BumpStrategy<Object>::resize(Object *&array, const size_t currentSize) {
-    Object *holder = array;
+template <typename Object>
+size_t BumpStrategy<Object>::resize(Object*& array, const size_t currentSize) {
+    Object* holder = array;
     size_t size{currentSize + 1};
-    Object *tmp = new Object[size];
+    Object* tmp = new Object[size];
     for (size_t index{0}; index < currentSize; ++index) {
         tmp[index] = array[index];
     }

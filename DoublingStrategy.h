@@ -11,13 +11,11 @@
 
 #include "ResizingStrategy.h"
 
-template<typename Object>
+template <typename Object>
 class DoublingStrategy : public ResizingStrategy<Object> {
 public:
     DoublingStrategy() = default;
-
-    size_t resize(Object *&array, const size_t currentSize) override;
-
+    size_t resize(Object*& array, const size_t currentSize) override;
     virtual ~DoublingStrategy() = default;
 };
 
