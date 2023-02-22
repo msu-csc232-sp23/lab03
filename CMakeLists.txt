@@ -47,13 +47,13 @@ add_executable(test_task3 ${SRC_TEST_TASK3_FILES})
 # add custom commands that copy data input files to target working directories
 add_custom_command(TARGET main PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/main_data.txt ${CMAKE_CURRENT_BINARY_DIR})
 add_custom_command(TARGET demo PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/demo_data.txt ${CMAKE_CURRENT_BINARY_DIR})
-add_custom_command(TARGET test_task1 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/csc232.h ${CMAKE_CURRENT_BINARY_DIR})
-add_custom_command(TARGET test_task2 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/csc232.h ${CMAKE_CURRENT_BINARY_DIR})
-add_custom_command(TARGET test_task3 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/csc232.h ${CMAKE_CURRENT_BINARY_DIR})
 
-add_custom_command(TARGET test_task1 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/csc232.cpp ${CMAKE_CURRENT_BINARY_DIR})
-add_custom_command(TARGET test_task2 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/csc232.cpp ${CMAKE_CURRENT_BINARY_DIR})
-add_custom_command(TARGET test_task3 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/csc232.cpp ${CMAKE_CURRENT_BINARY_DIR})
+add_custom_command(TARGET test_task1 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/ResizingStrategy.h ${CMAKE_CURRENT_BINARY_DIR})
+
+add_custom_command(TARGET test_task2 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/BumpStrategy.h ${CMAKE_CURRENT_BINARY_DIR})
+add_custom_command(TARGET test_task2 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/BumpStrategy.cpp ${CMAKE_CURRENT_BINARY_DIR})
+add_custom_command(TARGET test_task2 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/DoublingStrategy.h ${CMAKE_CURRENT_BINARY_DIR})
+add_custom_command(TARGET test_task2 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_LIST_DIR}/DoublingStrategy.cpp ${CMAKE_CURRENT_BINARY_DIR})
 
 enable_testing()
 add_test(NAME TestTask1 COMMAND test_task1)

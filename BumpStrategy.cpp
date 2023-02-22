@@ -10,10 +10,10 @@
 #include "BumpStrategy.h"
 
 template <typename Object>
-size_t BumpStrategy<Object>::resize(Object*& array, const size_t currentSize) {
+size_t BumpStrategy<Object>::resize(Object*& array, size_t currentSize) {
     Object* holder = array;
-    size_t size{currentSize + 1};
-    Object* tmp = new Object[size];
+    size_t size = currentSize + 1;
+    auto tmp = new Object[size];
     for (size_t index{0}; index < currentSize; ++index) {
         tmp[index] = array[index];
     }
@@ -21,3 +21,5 @@ size_t BumpStrategy<Object>::resize(Object*& array, const size_t currentSize) {
     delete[] holder;
     return size;
 }
+
+// TODO 2.2: Erase this line and define the inherited primitive method by returning one more than the currentSize parameter

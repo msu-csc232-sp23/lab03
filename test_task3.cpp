@@ -22,10 +22,9 @@ TEST_SUITE("Task 3"
            * doctest::skip(SKIP_TESTING_TASK_3))
 {
 #if !SKIP_TESTING_TASK_3
-
-    SCENARIO("Lab 3, Task 3")
+    SCENARIO("Lab 3, Task 3 - Verifying the Refactored Doubling Strategy")
     {
-        GIVEN("Some preconditions") {
+        GIVEN("a ResizableBag of ints capable of storing 2 items with a doubling resizing strategy") {
             ResizableArrayBag<int> bag{2, new DoublingStrategy<int>{}};
             WHEN("I add two entries") {
                 for (int i{0}; i < 2; ++i) {
@@ -62,9 +61,9 @@ TEST_SUITE("Task 3"
         }
     }
 
-    SCENARIO("Lab 3, Task 3")
+    SCENARIO("Lab 3, Task 2 - Verifying the Refactored Bump Strategy")
     {
-        GIVEN("Some preconditions") {
+        GIVEN("a ResizableBag of doubles capable of storing 2 items with a bump resizing strategy") {
             ResizableArrayBag<double> decimals{2, new BumpStrategy<double>{}};
             WHEN("I add two entries") {
                 for (int i{0}; i < 2; ++i) {

@@ -21,6 +21,7 @@
  * @return EXIT_SUCCESS upon successful completion.
  */
 int main(int argc, char *argv[]) {
+
     std::cout << "Demo of Strategy Pattern\n";
     ResizableArrayBag<int> bag{2, new DoublingStrategy<int>{}};
     ResizableArrayBag<double> decimals{2, new BumpStrategy<double>{}};

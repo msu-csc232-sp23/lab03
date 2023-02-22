@@ -93,26 +93,50 @@ template method operates.
 
 Each task in this assignment corresponds to one of the parts of Exercise 19.
 
-1. Task 1: Pull common code up in the class hierarchy
-2. Task 2: Declare an abstract method in template method
-3. Task 3: Implement abstract method referenced in template method
+1. Task 1: Declare a primitive method in the abstract strategy interface
+2. Task 2: Implement primitive method in the concrete strategy classes
+3. Task 3: Pull common code up in the class hierarchy and refactor using template method
 
-### Task 1: Declare an abstract method in template method
+### Task 1: Declare a primitive method in the abstract strategy interface
 
-1. Locate `TODO 1.1` in `ResizingStrategy.h` and follow its instructions
+NOTE: When you have completed this task, the `demo` target will not build. It won't build again until you successfully complete Task 2. Nonetheless, you can still verify your progress on this task by running the `test_task1` target.
 
-### Task 2: Pull common code up in the class hierarchy
- 
-1. Locate `TODO 2.1` in the `ResizingStrategy.h` header file and follow its instructions.
-2. Locate `TODO 2.2` and replace the assignment to the `size` local variable with a call to the template method declared in task 1.
+1. Locate `TODO 1.1` in `ResizingStrategy.h` and follow its instructions.
+2. When you have completed this task, toggle the `SKIP_TESTING_TASK_1` macro from `TRUE` to `FALSE`.
+3. Build and execute the `test_task1` target to test your solution.
+4. When all the tests for this task pass, commit and push your changes to GitHub.
 
-### Task 3: Implement abstract method referenced in template method
+### Task 2: Implement primitive method in the concrete strategy classes
 
-1. Erase the implementations of the resize methods in the concrete strategy classes (i.e., remove the declaration from the header file and the implementation from the source file)
-2. Override the new template method declared the first task, i.e., implement it accordingly in the concrete classes
+1. Locate `TODO 2.1` in `BumpStrategy.h` and follow its instructions
+2. Locate `TODO 2.2` in `BumpStrategy.cpp` and follow its instructions
+3. Locate `TODO 2.3` in `DoublingStrategy.h` and follow its instructions
+4. Locate `TODO 2.4` in `DoublingStrategy.cpp` and follow its instructions
+5. Build and execute the `test_task2` target to test your solution. Alternatively, you can build and execute the `All CTest` target.
+6. When all the tests for this task pass, commit and push your changes to GitHub.
+
+### Task 3: Pull common code up in the class hierarchy and refactor using template method
+
+In this task, we refactor the resize() method, making it a template method that calls the primitive method declared in Task 1.
+
+1. In `ResizingStrategy.h`, change the pure virtual declaration of the `resize()` method into an actual definition. Keep the `virtual` keyword in place, but remove the `= 0;` and replace it with an empty body, e.g.,
+
+   ```c++
+   virtual size_t resize(Object*& array, size_t currentSize) = 0;
+   ```
+   
+   becomes
+
+   ```c++
+   virtual size_t resize(Object*& array, size_t currentSize) {
+
+   }
+   ```
+   
+   Copy the body of one of the concrete class implementations into this definition and replace the line that assigns a value to the local variable `size` by assigning it the value received from calling the primitive method declared in Task 1. In so doing, you have just made this a template method.
+2. Next, erase the implementations of the resize methods in the concrete strategy classes (i.e., remove the declaration from the header file and the implementation from the source file). When you are done with this step, the `resize()` method is defined in only one place: `ResizingStrategy.h`.
 3. When you have completed this task, toggle the `SKIP_TESTING_TASK_3` macro from `TRUE` to `FALSE`.
-4. Build and execute the `test_task3` target to test your solution. Alternatively, you can build and execute
-   the `All CTest` target.
+4. Build and execute the `test_task3` target to test your solution. Alternatively, you can build and execute the `All CTest` target.
 5. When all the tests for this task pass, commit and push your changes to GitHub.
 
 ## Submission Details
@@ -130,7 +154,7 @@ If you've already set up remote tracking (using the `-u origin develop` switch),
 git push
 ```
 
-As usual, prior to submitting your assignment on Blackboard, be sure that you have committed and pushed your final
+As usual, prior to submitting your assignment on Microsoft Teams, be sure that you have committed and pushed your final
 changes to GitHub. Once your final changes have been pushed, create a pull request that seeks to merge the changes in
 your `develop` branch into your `trunk` branch. Once your pull request has been created, submit the URL of your
 assignment _repository_ (i.e., _not_ the URL of the pull request) on the Teams Assignment. Please note: the timestamp of
@@ -147,7 +171,7 @@ This assignment is worth **3 points**.
 | Code Style (20%)   | Exemplary code style         | Consistent, modern coding style     | Inconsistent coding style           | No style whatsoever or no code changes present |
 | Correctness^ (60%) | All unit tests pass          | At least 80% of the unit tests pass | At least 60% of the unit tests pass | Less than 50% of the unit tests pass           |
 
-^ _The Google Test unit runner will calculate the correctness points based purely on the fraction of tests passed_.
+^ _The results of the Doctest unit tests will be used to determine the correctness points which is based purely on the fraction of tests passed_.
 
 ### Late Penalty
 
