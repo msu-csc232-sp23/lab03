@@ -10,10 +10,10 @@
 #include "DoublingStrategy.h"
 
 template <typename Object>
-size_t DoublingStrategy<Object>::resize(Object*& array, const size_t currentSize) {
+size_t DoublingStrategy<Object>::resize(Object*& array, size_t currentSize) {
     Object* holder = array;
-    size_t size{2 * currentSize};
-    Object* tmp = new Object[size];
+    size_t size = 2 * currentSize;
+    auto tmp = new Object[size];
     for (size_t index{0}; index < currentSize; ++index) {
         tmp[index] = array[index];
     }
@@ -21,3 +21,5 @@ size_t DoublingStrategy<Object>::resize(Object*& array, const size_t currentSize
     delete[] holder;
     return size;
 }
+
+// TODO 2.4: Erase this line and define the inherited primitive method by returning twice the currentSize parameter

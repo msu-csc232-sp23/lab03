@@ -46,45 +46,6 @@
 
 /* Begin student work */
 
-// TODO: Task 1.1 - Declare the power1 function below
-// The return type shall be double
-// The name of this function shall be power1
-// The function shall contain two parameters
-// The first parameter will be a double and shall be named x
-// The second parameter will be an integer and shall be named n
-// These parameters represent the expression x^n that this function
-// is intended to compute.
-// Make sure to fully document your function using Javadoc-style
-// Doxygen comments.
-
-
-
-// TODO: Task 2.1 - Declare the power2 function below
-// The return type shall be double
-// The name of this function shall be power2
-// The function shall contain two parameters
-// The first parameter will be a double and shall be named x
-// The second parameter will be an integer and shall be named n
-// These parameters represent the expression x^n that this function
-// is intended to compute.
-// Make sure to fully document your function using Javadoc-style
-// Doxygen comments.
-
-
-
-// TODO: Task 3.1 - Declare the power3 function below
-// The return type shall be double
-// The name of this function shall be power3
-// The function shall contain two parameters
-// The first parameter will be a double and shall be named x
-// The second parameter will be an integer and shall be named n
-// These parameters represent the expression x^n that this function
-// is intended to compute.
-// Make sure to fully document your function using Javadoc-style
-// Doxygen comments.
-
-
-
 /* End student work -- DO NOT ADD OR MODIFY ANYTHING BELOW THIS COMMENT */
 
 /**

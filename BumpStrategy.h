@@ -6,8 +6,8 @@
  * @authors Jim Daehn <jdaehn@missouristate.edu>
  */
 
-#ifndef LAB07_BUMPSTRATEGY_H
-#define LAB07_BUMPSTRATEGY_H
+#ifndef LAB03_BUMP_STRATEGY_H
+#define LAB03_BUMP_STRATEGY_H
 
 #include "ResizingStrategy.h"
 
@@ -15,8 +15,9 @@ template <typename Object>
 class BumpStrategy : public ResizingStrategy<Object> {
 public:
     BumpStrategy() = default;
-    size_t resize(Object*& array, const size_t currentSize) override;
+    size_t resize(Object*& array, size_t currentSize) override;
+    // TODO: 2.1: Erase this line and declare the inherited primitive method as an override
     virtual ~BumpStrategy() = default;
 };
 
-#endif //LAB07_BUMPSTRATEGY_H
+#endif // LAB03_BUMP_STRATEGY_H
